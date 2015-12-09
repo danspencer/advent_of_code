@@ -11,3 +11,23 @@
 # > delivers presents to 2 houses: one at the starting location, and one to the east.
 # ^>v< delivers presents to 4 houses in a square, including twice to the house at his starting/ending location.
 # ^v^v^v^v^v delivers a bunch of presents to some very lucky children at only 2 houses.
+
+directions = File.read("input.txt")
+
+moves = { "^": [0,-1], ">": [1,0], "v": [0,1], "<": [-1,0] }
+
+# needs to be a better way of initialize aaa multidimensional array
+location = Array.new(directions.length) { Array.new(directions.length) }
+x_coord = 0
+y_coord = 0
+location[x_coord][y_coord] = true
+
+directions.each_char do |direction|
+  if !moves[direction.to_sym].nil? 
+    x_coord = x_coord + moves[direction.to_sym][0]
+    y_coord = y_coord + moves[direction.to_sym][1]
+    location[x_coord][y_coord] = true
+  end
+end
+
+puts location.flatten!.compact!.length.to_s + " houses received at least one present."
