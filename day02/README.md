@@ -1,4 +1,4 @@
-# --- [Day 2: I Was Told There Would Be No Math](http://adventofcode.com/day/2) ---
+# [Day 2: I Was Told There Would Be No Math](http://adventofcode.com/day/2)
 
 ## --- Part One ---
 
