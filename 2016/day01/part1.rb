@@ -1,4 +1,3 @@
-require 'pry'
 input = File.read("input.txt")
 
 lr_blocks = 0
