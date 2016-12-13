@@ -135,7 +135,3 @@ input.split(',').each do |c|
 end
 total_blocks = x.abs + y.abs
 puts "The Easter Bunny HQ is located at x: #{x} and y: #{y} which is #{total_blocks} blocks away.\n"
-
-def move_location()
-
-end
