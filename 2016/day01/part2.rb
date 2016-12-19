@@ -10,7 +10,6 @@ visited_locations = []
 visited_locations.push current_location
 input.split(',').each do |c|
   d = c.strip.split(/(?<=[a-zA-Z])/)
-  puts d
   if orientation == "N"
     if d[0] == "R"
       orientation = "E"
@@ -18,7 +17,6 @@ input.split(',').each do |c|
       while y != y_end
         y = y + 1
         location = { x: x, y: y }
-        puts visited_locations.any?  {|h| h[:x] == x && h[:y] == y}
         if visited_locations.any?  {|h| h[:x] == x && h[:y] == y}
           match = true
           break if match
@@ -32,7 +30,6 @@ input.split(',').each do |c|
       while y != y_end
         y = y - 1
         location = { x: x, y: y }
-        puts visited_locations.any?  {|h| h[:x] == x && h[:y] == y}
         if visited_locations.any?  {|h| h[:x] == x && h[:y] == y}
           match = true
           break if match
@@ -48,7 +45,6 @@ input.split(',').each do |c|
       while x != x_end
         x = x - 1
         location = { x: x, y: y }
-        puts visited_locations.any?  {|h| h[:x] == x && h[:y] == y}
         if visited_locations.any?  {|h| h[:x] == x && h[:y] == y}
           match = true
           break if match
@@ -62,7 +58,6 @@ input.split(',').each do |c|
       while x != x_end
         x = x + 1
         location = { x: x, y: y }
-        puts visited_locations.any?  {|h| h[:x] == x && h[:y] == y}
         if visited_locations.any?  {|h| h[:x] == x && h[:y] == y}
           match = true
           break if match
@@ -78,7 +73,6 @@ input.split(',').each do |c|
       while y != y_end
         y = y - 1
         location = { x: x, y: y }
-        puts visited_locations.any?  {|h| h[:x] == x && h[:y] == y}
         if visited_locations.any?  {|h| h[:x] == x && h[:y] == y}
           match = true
           break if match
@@ -92,7 +86,6 @@ input.split(',').each do |c|
       while y != y_end
         y = y + 1
         location = { x: x, y: y }
-        puts visited_locations.any?  {|h| h[:x] == x && h[:y] == y}
         if visited_locations.any?  {|h| h[:x] == x && h[:y] == y}
           match = true
           break if match
@@ -108,7 +101,6 @@ input.split(',').each do |c|
       while x != x_end
         x = x + 1
         location = { x: x, y: y }
-        puts visited_locations.any?  {|h| h[:x] == x && h[:y] == y}
         if visited_locations.any?  {|h| h[:x] == x && h[:y] == y}
           match = true
           break if match
@@ -122,7 +114,6 @@ input.split(',').each do |c|
       while x != x_end
         x = x - 1
         location = { x: x, y: y }
-        puts visited_locations.any?  {|h| h[:x] == x && h[:y] == y}
         if visited_locations.any?  {|h| h[:x] == x && h[:y] == y}
           match = true
           break if match
@@ -133,5 +124,7 @@ input.split(',').each do |c|
     end
   end
 end
+
 total_blocks = x.abs + y.abs
+
 puts "The Easter Bunny HQ is located at x: #{x} and y: #{y} which is #{total_blocks} blocks away.\n"
